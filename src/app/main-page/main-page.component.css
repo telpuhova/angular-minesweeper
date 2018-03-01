@@ -13,13 +13,21 @@ td {
   /* position: absolute; */
 }
 
+.table {
+  /* border-left: black 1px solid; */
+  /* border-top: black 1px solid; */
+}
+
 .row {
+  border-left: black 1px solid;
 
 }
 
 .col {
   float: left;
-  border: black 1px solid;
+  border-right: black 1px solid;
+  border-bottom: black 1px solid;
   width: 25px;
   height: 25px;
+  text-align: center;
 }
