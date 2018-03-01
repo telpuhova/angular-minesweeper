@@ -4,6 +4,22 @@ table {
 }
 
 td {
+
   margin: 0; padding: 0;
   width: 5px;
+}
+
+.square {
+  /* position: absolute; */
+}
+
+.row {
+
+}
+
+.col {
+  float: left;
+  border: black 1px solid;
+  width: 25px;
+  height: 25px;
 }

@@ -1,10 +1,9 @@
 <p>minesweeper</p>
-<table class="table table-bordered table-condensed">
-  <div *ngIf="start">
-    <div *ngFor="let square of squares">
-      <div (click)="clickSquare(square)"><p>0</p></div>
 
+<div *ngIf="start">
+  <div class="row" *ngFor="let row of rows">
+    <div (click)="clickSquare(square)" class="col" *ngFor="let square of row">
+      {{square.value}}
     </div>
-
   </div>
-</table>
+</div>
