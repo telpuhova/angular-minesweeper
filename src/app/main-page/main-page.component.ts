@@ -13,9 +13,10 @@ declare var $: any;
   providers: [SquareService]
 })
 export class MainPageComponent implements OnInit {
-  start: boolean = true;
+  start: boolean = false;
   squares;
   rows;
+  openedSquares = 0;
 
 
   constructor(private squareService: SquareService) { }
@@ -41,14 +42,25 @@ export class MainPageComponent implements OnInit {
 
   startGame() {
     this.start = true;
-
+    this.openedSquares = 0;
   }
 
   clickSquare(clickedSquare) {
     $("#" + clickedSquare.$key).show();
     if (clickedSquare.value === "*") {
       alert("you're lost");
+      this.start = false;
     }
+    this.openedSquares++;
+    if (this.openedSquares > 53) {
+      alert("you won");
+      $(".square-value").show();
+    }
+
+  }
+
+  newGameClick() {
+    this.start = true;
   }
 
 }

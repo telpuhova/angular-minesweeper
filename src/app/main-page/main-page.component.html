@@ -1,5 +1,7 @@
 <p>minesweeper</p>
 
+<button (click)="newGameClick()">new game</button>
+
 <div class="table" *ngIf="start">
   <div class="row" *ngFor="let row of rows">
     <div (click)="clickSquare(square)" class="col square" *ngFor="let square of row">
