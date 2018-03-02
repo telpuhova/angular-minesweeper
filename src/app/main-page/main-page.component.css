@@ -31,3 +31,7 @@ td {
   height: 25px;
   text-align: center;
 }
+
+.square-value {
+  display: none;
+}

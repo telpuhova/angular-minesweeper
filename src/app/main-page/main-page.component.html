@@ -2,8 +2,8 @@
 
 <div class="table" *ngIf="start">
   <div class="row" *ngFor="let row of rows">
-    <div (click)="clickSquare(square)" class="col" *ngFor="let square of row">
-      {{square.value}}
+    <div (click)="clickSquare(square)" class="col square" *ngFor="let square of row">
+      <span class="square-value" id="{{square.$key}}">{{square.value}}</span>
     </div>
   </div>
 </div>

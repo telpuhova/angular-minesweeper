@@ -3,6 +3,9 @@ import { SQUARES } from '../mock-squares2';
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 import { SquareService } from '../square.service';
 
+// import { Component, Input, OnInit, AfterViewChecked } from '@angular/core';
+declare var $: any;
+
 @Component({
   selector: 'app-main-page',
   templateUrl: './main-page.component.html',
@@ -18,10 +21,6 @@ export class MainPageComponent implements OnInit {
   constructor(private squareService: SquareService) { }
 
   ngOnInit() {
-    // this.squares = this.squareService.getSquares();
-    // console.log(this.squares);
-
-
     this.squareService.getSquares().subscribe(dataLastEmittedFromObserver => {
       this.squares = dataLastEmittedFromObserver;
       console.log(this.squares)
@@ -46,7 +45,10 @@ export class MainPageComponent implements OnInit {
   }
 
   clickSquare(clickedSquare) {
-    alert(clickedSquare.value);
+    $("#" + clickedSquare.$key).show();
+    if (clickedSquare.value === "*") {
+      alert("you're lost");
+    }
   }
 
 }
