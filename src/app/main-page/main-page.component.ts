@@ -13,7 +13,7 @@ declare var $: any;
   providers: [SquareService]
 })
 export class MainPageComponent implements OnInit {
-  start: boolean = false;
+  start: boolean = true;
   squares;
   rows;
   openedSquares = 0;
@@ -48,19 +48,29 @@ export class MainPageComponent implements OnInit {
   clickSquare(clickedSquare) {
     $("#" + clickedSquare.$key).show();
     if (clickedSquare.value === "*") {
-      alert("you're lost");
-      this.start = false;
+      // alert("you're lost");
+      $("#default").hide();
+      $("#lost").show();
+      $(".square-value").show();
+      // this.start = false;
     }
     this.openedSquares++;
     if (this.openedSquares > 53) {
-      alert("you won");
+      // alert("you won");
       $(".square-value").show();
+      $("#default").hide();
+      $("#won").show();
     }
 
   }
 
   newGameClick() {
     this.start = true;
+    this.openedSquares = 0;
+    $(".square-value").hide();
+    $("#lost").hide();
+    $("#won").hide();
+    $("#default").show();
   }
 
 }

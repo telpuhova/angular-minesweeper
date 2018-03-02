@@ -10,28 +10,45 @@ td {
 }
 
 .square {
-  /* position: absolute; */
+
 }
 
 .table {
-  /* border-left: black 1px solid; */
-  /* border-top: black 1px solid; */
+  margin-left: 2%;
 }
 
 .row {
-  border-left: black 1px solid;
+  /* border-left: black 1px solid; */
 
 }
 
 .col {
+
+  display: inline-block;
+  border: 1px solid black;
+
+  margin-left: -1px;
+  margin-bottom: -1px;
+
   float: left;
-  border-right: black 1px solid;
-  border-bottom: black 1px solid;
   width: 25px;
   height: 25px;
   text-align: center;
 }
 
 .square-value {
+  display: none;
+}
+
+button {
+  margin-bottom: 15px;
+  margin-left: 8%;
+}
+
+#lost {
+  display: none;
+}
+
+#won {
   display: none;
 }

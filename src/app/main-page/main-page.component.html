@@ -1,6 +1,6 @@
-<p>minesweeper</p>
+<h1>minesweeper</h1>
 
-<button (click)="newGameClick()">new game</button>
+<button (click)="newGameClick()"><span id="default">:)</span><span id="lost">x(</span><span id="won">8)</span></button>
 
 <div class="table" *ngIf="start">
   <div class="row" *ngFor="let row of rows">
